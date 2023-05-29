@@ -36,7 +36,19 @@ const largestPair = function(array) {
 };
 
 const removeParenth = function(str) {
-  // your code here - don't forget to return a string!
+  // variables to index beginning and end of parenthesis
+  let begin;
+  let end;
+  // for loop to set 'begin' and 'end' vars to index of open/close parenthesis
+  for(i = 0; i < str.length; i++){
+    begin = str.indexOf('(');
+    end = str.indexOf(')');
+    end = end + 1;
+  }
+  // var 'slice' set to string of all indexed chars from open to closed parenthesis and removed from passed param 'str' via .replace(); returns str
+  let slice = str.slice(begin, end);
+  str = str.replace(slice, "");
+  return str;
 };
 
 const scoreScrabble = function(str) {
