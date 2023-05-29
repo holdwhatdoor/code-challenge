@@ -1,7 +1,10 @@
 const findSum = function(array) {
-  // your code here - don't forget to return a number!
+  // variable set to value of passed param 'array' using reduce() with callback function that adds each element of the array
+  var sum = array.reduce(function (sum, array){
+    return sum + array;
+  }, 0);
+return sum;
 };
-
 const findFrequency = function(array) {
   // your code here - don't forget to return an object!
 };
