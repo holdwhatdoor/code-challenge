@@ -10,7 +10,25 @@ const findFrequency = function(array) {
 };
 
 const isPalindrome = function(str) {
-  // your code here - don't forget to return a boolean!
+  // declared variables - boolean, string and array
+  let palindrome;
+  let matchTestStr = "";
+  let matchTestArray = [];
+  // loops 'str' param and sets a string variable for each string index in reverse order  
+  for(i = str.length - 1; i >= 0; i--){
+    matchTestArray.push(str[i]);
+    matchTestArray = matchTestArray.join("").split(",");
+    matchTestStr = matchTestArray[0];
+  }
+  // tests reversed string variable against initial passed param 
+  // string - isPalindrome set to 'true' if the strings match, otherwise false
+  if(matchTestStr === str){
+    palindrome = true;
+  }
+  else{
+    palindrome = false;
+  }
+  return palindrome;
 };
 
 const largestPair = function(array) {
