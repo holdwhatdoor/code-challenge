@@ -52,5 +52,39 @@ const removeParenth = function(str) {
 };
 
 const scoreScrabble = function(str) {
-  // your code here - don't forget to return a number!
+  var letterValues = [];
+  // for loop iterates through passed param 'str' and adds corresponding value for 'str' index char and pushes to 'letterValues' array
+  // 'letterScore' var uses .reduce function on 'letterValues' array and returns 'letterScore'
+    for(i = 0; i < str.length; i++){
+      if(str[i] === 'a' || str[i] === 'e' || str[i] === 'i' ||
+      str[i] === 'o' || str[i] === 'u' || str[i] === 'l' ||
+      str[i] === 'n' || str[i] === 'r' || str[i] === 's' ||
+      str[i] === 't'){
+        letterValues.push(1);
+      }
+      if(str[i] === 'd' || str[i] === 'g'){
+        letterValues.push(2);
+      }
+      if(str[i] === 'b' || str[i] === 'c' || str[i] === 'm' ||
+      str[i] === 'p'){
+        letterValues.push(3);
+      }
+      if(str[i] === 'f' || str[i] === 'h' || str[i] === 'v' ||
+      str[i] === 'w' || str[i] === 'y'){
+        letterValues.push(4);
+      }
+      if(str[i] === 'k'){
+        letterValues.push(5);
+      }
+      if(str[i] === 'j' || str[i] === 'x'){
+        letterValues.push(8);
+      }
+      if(str[i] === 'q' || str[i] === 'z'){
+        letterValues.push(10);
+      }
+    }
+    var letterScore = letterValues.reduce(function (sum, number){
+      return sum + number;
+    }, 0);
+    return letterScore;
 };
