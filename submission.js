@@ -5,6 +5,7 @@ const findSum = function(array) {
   }, 0);
 return sum;
 };
+
 const findFrequency = function(array) {
     // Object variable with declared properties of letter strings
     var mostLeast = {
@@ -24,6 +25,26 @@ const findFrequency = function(array) {
         letterInstance[item] = 1;
       }
     });
+      // variable to hold an array of each letter 
+    let letters = Object.keys(letterInstance);
+    // for loop to iterate through letter instances and create object with count 0 for each letter
+    for(i = 0; i < letters.length; i++){
+      let letterObj = {
+        letter: '',
+        count: 0
+      }
+      letterObj.letter = letters[i];
+      // inner for loop to iterate 'array' and increase count of letter instance within the passed param 'array'
+      for(j = 0; j < array.length; j++){
+        if(array[j] === letters[i]){
+          letterObj.count++;
+        }
+      }  
+      // populates 'counted' array with count for each letter
+      counted.push(letterObj.count);
+      // populates 'countArray' with letter objects of letter and count property/values
+      countArray.push(letterObj);
+    }
 };
 
 const isPalindrome = function(str) {
