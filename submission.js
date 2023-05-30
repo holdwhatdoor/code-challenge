@@ -45,6 +45,23 @@ const findFrequency = function(array) {
       // populates 'countArray' with letter objects of letter and count property/values
       countArray.push(letterObj);
     }
+  // variables assigned to value of hi and low numbers of 'counted' array
+    var max = Math.max(...counted);
+    var min = Math.min(...counted);
+    /**
+     * for loop to iterate object array 'countArray' and compare 
+     * count value of each letter object to most and least count and 
+     * and assign 'mostLeast' object letter properties .most and .least
+    */
+    for(k = 0; k < countArray.length; k++){
+      if(max === countArray[k].count){
+        mostLeast.most = countArray[k].letter;
+      }
+      else if(min === countArray[k].count){
+        mostLeast.least = countArray[k].letter;
+      }
+    }
+    return mostLeast;
 };
 
 const isPalindrome = function(str) {
